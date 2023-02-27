@@ -1,0 +1,265 @@
+namespace Midterm_Pro
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            
+            try
+            {
+                Player main_player = new Player();
+                bool run1 = true;
+                while (run1)
+                {
+                    Console.WriteLine("Would you like to read the back story? or rules?");
+                    string readBackstory = Console.ReadLine();
+                    readBackstory = readBackstory.ToLower();
+
+                    if (readBackstory == "backstory")
+                    {
+
+                        Console.WriteLine("You are an alien from an unkown planet sent on an exploring mission to planet Earth. You are just one of thousands of alien life that have come to earth to explore, understand, and gather intelgience about earth and its creatures. Your mission was going well until the last few hours before everything started to go wrong. Your ship crash landed on earth and now must fix your ship with the help of locals and other disgused aliens before it is to late. You only have 5 days to get your ship in working condition and head back to your home planet.");
+                        run1 = false;
+                    }
+                    else if (readBackstory == "rules")
+                    {
+                        Console.WriteLine("You will be given a series of questions, your goal is to fix the ship and return back to your planet. You just have to follow the promp and answer questions correctly, make sure to type the words CORECTLY: ");
+                        run1 = false;                    
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Oops! something went wrong");
+
+                    }
+                }
+               
+
+
+                Console.WriteLine("300 feet");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("PULL UP!!!");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("200 feet");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("PULL UP!!!");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("100 feet");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("PULL UP!!!");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("50 feet");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("YOU HAVE CRASHED!!!");
+                System.Threading.Thread.Sleep(500);
+
+
+                bool run2 = true;
+                while (run2)
+                {
+                    Console.WriteLine("You walk outside and see your ship is on fire");
+                    Console.WriteLine("a) wait for the fire to stop on its own");
+                    Console.WriteLine("b) grab the fire extingusher");
+                    Console.WriteLine("c) Check Inventory");
+
+                    string a_b = Console.ReadLine().ToLower();
+
+                    if (a_b == "a")
+                    {
+                        Console.WriteLine("***EXPLOSION****");
+                        Console.WriteLine("OH NO, your ship exploded you have you lost 50 gold coins, if you have zero or less coins at the end of the game you lose");
+                        main_player.gold -= 50;
+                        Console.WriteLine("gold coins: "+ main_player.gold);
+                        run2 = false;
+                    }
+                    else if (a_b == "b")
+                    {
+                        Console.WriteLine("You run back inside the ship and grab the fire extingueser and put the fire out, +100 coins");
+                        Console.WriteLine("You reinpsect the ship and see that you need to gather equipment. You can always check your inventory by typeing 'in'");
+                        main_player.gold += 100;
+                        Console.WriteLine("gold coins: "+ main_player.gold);
+                        run2 = false;
+                    }
+                    else if(a_b == "c")
+                    {
+                        checkInventory();
+                        run2 = false;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Oops! something went wrong");
+
+                    }
+                }
+
+                bool run3 = true;
+                while (run3)
+                {
+                    Console.WriteLine("You see a car and a bicycle, which one are you going to take to drive to the city to gather equipment? ");
+                    Console.WriteLine("a) Car");
+                    Console.WriteLine("b) bicycle");
+                    Console.WriteLine("c) Check Inventory");
+
+                    string a_b = Console.ReadLine().ToLower();
+
+                    if (a_b == "a")
+                    {
+                        Console.WriteLine("Good Pick, you will get into the city fast, +100 gold coins");
+                        main_player.gold += 100;
+                        Console.WriteLine("gold coins: " + main_player.gold);
+                        run3 = false;
+                        System.Environment.Exit(0);
+                    }
+                    else if (a_b == "b")
+                    {
+                        Console.WriteLine("A bicycle will work, but it is slow and can't carry anything, -50 gold coins");
+                        Console.WriteLine("You reinpsect the ship and see that you need to gather equipment. You can always check your inventory by typeing 'in'");
+                        main_player.gold -= 50;
+                        Console.WriteLine("gold coins: "+ main_player.gold);
+                        run3 = false;
+                    }
+                    else if (a_b == "c")
+                    {
+                        checkInventory();
+                        run3 = false;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Oops! something went wrong");
+
+                    }
+                }
+
+                bool run4 = true;
+                while (run4)
+                {
+                    Console.WriteLine("you're driving down the street and see a hitch hiker with a backpack wearing an autobody shirt, are you giving him a ride or not");
+                    Console.WriteLine("a) yes");
+                    Console.WriteLine("b) no");
+                    Console.WriteLine("c) Check Inventory");
+
+                    string a_b = Console.ReadLine().ToLower();
+
+                    if (a_b == "a")
+                    {
+                        Console.WriteLine("Good Pick, he probalby works in a mechanic shop so he migh have equipment in his backpack, +100 gold coins");
+                        main_player.gold += 100;
+                        Console.WriteLine("gold coins: " + main_player.gold);
+                        run4 = false;
+                    }
+                    else if (a_b == "b")
+                    {
+                        Console.WriteLine("bad choice, you might have been able to help with, he works in a mechinal shop so he might have had tools you needed, -50 gold coins");
+                        main_player.gold -= 50;
+                        Console.WriteLine("gold coins: " + main_player.gold);
+                        run4 = false;
+                    }
+                    else if (a_b == "c")
+                    {
+                        checkInventory();
+                        run4 = false;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Oops! something went wrong");
+
+                    }
+                }
+
+                bool run5 = true;
+                while (run5)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("a) ");
+                    Console.WriteLine("b) ");
+                    Console.WriteLine("c) Check Inventory");
+
+                    string a_b = Console.ReadLine().ToLower();
+
+                    if (a_b == "a")
+                    {
+                        Console.WriteLine("Good Pick, -----, +100 gold coins");
+                        main_player.gold += 100;
+                        Console.WriteLine("gold coins: " + main_player.gold);
+                        run4 = false;
+                    }
+                    else if (a_b == "b")
+                    {
+                        Console.WriteLine("bad choice, ----, -50 gold coins");
+                        main_player.gold -= 50;
+                        Console.WriteLine("gold coins: " + main_player.gold);
+                        run5 = false;
+                    }
+                    else if (a_b == "c")
+                    {
+                        checkInventory();
+                        run5 = false;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Oops! something went wrong");
+
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong, start over");
+            }
+            
+
+            
+
+        }
+        static void checkInventory()
+        {
+            Player player = new Player();
+            player.inventory.Add("test 1");
+            player.inventory.Add("test 2");
+            player.inventory.Add("test 3");
+
+            foreach (string i in player.inventory)
+            {
+                Console.WriteLine("i");
+            }
+
+        }
+    }
+
+    class Player
+    {
+        public string Name;
+        public int HP = 100;
+        public int gold = 0;
+
+        //inventory 
+
+        public List<string> inventory = new List<string>();
+
+        //weapon
+        public List<string> weapon = new List<string>();
+
+        //armor
+        public List<string> armor = new List<string>();
+
+    }
+
+    class ChestContainer
+    {
+
+    }
+    class CoinChest : ChestContainer
+    {
+
+    }
+    class WeaponChest : ChestContainer
+    {
+
+    }
+}
